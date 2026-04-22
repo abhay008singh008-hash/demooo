@@ -1,0 +1,12 @@
+{
+  "name": "House of Beauty Studio & Academy",
+  "description": "Premium beauty studio and professional training institute in Chandigarh offering luxury makeup services and certified beauty courses.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "Service Bookings",
+    "Course Enrollment",
+    "Lead Generation"
+  ]
+}

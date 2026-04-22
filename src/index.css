@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Poppins", sans-serif;
+
+  --color-gold: #D4AF37;
+  --color-premium-black: #0A0A0A;
+  --color-nude-beige: #F5E6DA;
+  --color-gloss-white: #FFFFFF;
+
+  --shadow-gold-glow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+@layer base {
+  body {
+    @apply bg-premium-black text-gloss-white font-sans antialiased selection:bg-gold selection:text-premium-black;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-white;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+  }
+
+  .bg-glass {
+    @apply backdrop-blur-lg bg-premium-black/60 border border-gold/20;
+  }
+
+  .gold-glow {
+    @apply shadow-gold-glow;
+  }
+
+  .gold-gradient {
+    @apply bg-linear-to-tr from-gold via-nude-beige to-gold;
+  }
+
+  .sparkle {
+    position: relative;
+  }
+
+  .sparkle::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: radial-gradient(circle at center, white 1%, transparent 20%);
+    background-size: 20px 20px;
+    animation: sparkle-move 4s linear infinite;
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  @keyframes sparkle-move {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+  }
+}
